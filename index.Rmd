@@ -61,7 +61,7 @@ If you must miss a class due to legitimate circumstances beyond your control, be
 
 # Topics
 
-1. [Introduction to Course](L01.html)
+1. [Introduction to Course](L01.Rmd)
 	A.  Focus of this Course: Time Series Forecasting
 	B.  Field of Forecasting is meeting the Market Test
 	C.  Definitions of Time Series, Point Forecasts, and Prediction Interval Forecasts
@@ -72,7 +72,7 @@ If you must miss a class due to legitimate circumstances beyond your control, be
 	
 + __Reference:__ Class Notes, SAS programs, and Chapters 1 and 2, FPP.  
 
-2. [A Brief Introduction to SAS](L02.html)
+2. [A Brief Introduction to SAS](L02.Rmd)
 	A.  APPS.SMU and Accessing Computer Programs on SMU's Virtual Server - Downloading Citrix Receiver
 	B.  Introduction to SAS (SAS = Statistical Analysis System)
 		i. Program Editor in SAS 9.4
@@ -84,7 +84,7 @@ If you must miss a class due to legitimate circumstances beyond your control, be
 		
 + __References:__ Class Notes  
 	
-3. [Salient Characteristics of Time Series Data](L03.html)
+3. [Salient Characteristics of Time Series Data](L03.Rmd)
 	A.  Trend, Seasonal, Cycle, Irregular Components
 	B.  Y = T + S + C + I (Additive Decomposition)
 	C.  log(Y) = T + S + C + I (Multiplicative Decomposition)
@@ -93,7 +93,7 @@ If you must miss a class due to legitimate circumstances beyond your control, be
 	
 + __References:__ Class notes, SAS programs, and Chapter 6, FPP  
 	
-4. [Brief Interlude on the Detection of Seasonality, Trend, and Cycle](L04.html)
+4. [Brief Interlude on the Detection of Seasonality, Trend, and Cycle](L04.Rmd)
 	A.  Trend Tests: Hirsch, et. al. Non-parametric test, HAC Non-Parametric Tests of Mean of Differences and Time Trend tests
 	B.  Seasonality Tests: Buys-Ballot Plots, Friedman's Non-parametric test, and F-Test in DTDS model
 	C.  Cycle: The Autocorrelation Function and Box-Pierce-Ljung Portmonteau Test
@@ -101,7 +101,7 @@ If you must miss a class due to legitimate circumstances beyond your control, be
 	
 + __References:__ Class notes and SAS programs
 	
-5. [A Beginning Time Series Model: The Stable Seasonal Pattern Model](L05.html)
+5. [A Beginning Time Series Model: The Stable Seasonal Pattern Model](L05.Rmd)
 	A.  Determination of Seasonal Proportions
 	B.  Test of Equal Proportions
 	C.  Estimation of Trend
@@ -109,7 +109,7 @@ If you must miss a class due to legitimate circumstances beyond your control, be
 	
 + __References:__ Class Notes  
 	
-6. [A First Generation Forecasting Model - The Deterministic Trend/Deterministic Seasonal (DTDS) Model](L06.html)
+6. [A First Generation Forecasting Model - The Deterministic Trend/Deterministic Seasonal (DTDS) Model](L06.Rmd)
 	A.  The Simple Trend Model - A Deterministic Trend
 	B.  Trend Model with Seasonal Dummies
 	C.  DTDS plus Autocorrelated Errors
@@ -118,7 +118,7 @@ If you must miss a class due to legitimate circumstances beyond your control, be
 	
 + __References:__ Class Notes, SAS programs, and Chapter 5, FPP  
 
-7. [A Sophisticated Time Series Decomposition Model: The Unobserved Components Model](L07.html) <!-- #  (Proc UCM in SAS) -->
+7. [A Sophisticated Time Series Decomposition Model: The Unobserved Components Model](L07.Rmd) <!-- #  (Proc UCM in SAS) -->
 	A.  Three Unobservable Components
         i. Trend  
         ii. Seasonal  
@@ -129,7 +129,7 @@ If you must miss a class due to legitimate circumstances beyond your control, be
 	
 + __References:__ Class Notes and SAS programs
 	
-8. [Some Important Concepts Leading up to Box-Jenkins Modeling](L08.html)
+8. [Some Important Concepts Leading up to Box-Jenkins Modeling](L08.Rmd)
     A.  Mean, Variance, and Autocorrelation in Time Series
     B.  Definition of Covariance Stationarity
     C.  Example of a Stationary Time Series: the AR(1) model
@@ -141,7 +141,7 @@ If you must miss a class due to legitimate circumstances beyond your control, be
         
 + __References:__ Class Notes, SAS program RW_IBM_data.sas, and Chapter 8, FPP  
   
-9. [Box Jenkins Models for Stationary, Non-Seasonal Time Series](L09.html)
+9. [Box Jenkins Models for Stationary, Non-Seasonal Time Series](L09.Rmd)
     A.  Some Simple Box-Jenkins Models and Their Properties  
         i. ARMA(0,0) 
         ii. MA(1) 
@@ -161,14 +161,14 @@ If you must miss a class due to legitimate circumstances beyond your control, be
 	
 + __References:__ Class Notes, SAS programs, and Chapter 8, FPP
 	
-10. [Box-Jenkins Models - Forecasting for Stationary, Non-Seasonal Time Series](L10.html)
+10. [Box-Jenkins Models - Forecasting for Stationary, Non-Seasonal Time Series](L10.Rmd)
 	A.  Minimum MSE Forecasting
 	B.  Various Forecast Profiles
 	C.  Example: The Forecast Profile and Confidence Intervals for the Lead Production Data
 
 + __References:__ Class Notes, SAS programs, and Chapter 8, FPP
 	
-11. [Box-Jenkins Models for Non-Seasonal, Stochastically-Trending Time Series](L11.html)
+11. [Box-Jenkins Models for Non-Seasonal, Stochastically-Trending Time Series](L11.Rmd)
     A.  Taking the First Difference to Control for Stochastic Trends 
     B.  Taking, On Occasion, Second Differences of the Data 
     C.  Augmented Dickey-Fuller Tests for Unit Roots: To Difference or Not To Difference? 
@@ -178,7 +178,7 @@ If you must miss a class due to legitimate circumstances beyond your control, be
 	
 + __References:__ Class Notes, RW_Data_and_Differencing.sas, other SAS programs, and Chapter 8, FPP
 	
-12. [Box-Jenkins Models for Seasonal, Stochastically-Trending Time Series](L12.html)
+12. [Box-Jenkins Models for Seasonal, Stochastically-Trending Time Series](L12.Rmd)
 	A.  Year-over-Year Differencing
 	B.  Year-over-Year Differencing Combined with First Differencing
 	C.  The Multiplicative Class of Box-Jenkins Models
@@ -188,7 +188,7 @@ If you must miss a class due to legitimate circumstances beyond your control, be
 	
 + __References:__ Class Notes, SAS Programs, and Chapter 8, FPP  
 	
-13. [Exponential Smoothing - An Old Favorite](L13.html) <!-- # (Proc ESM) -->
+13. [Exponential Smoothing - An Old Favorite](L13.Rmd) <!-- # (Proc ESM) -->
 	A.  Simple Exponential Smoothing (No Trend, No Seasonality)
 	B.  Double (Brown) Exponential Smoothing (Trend, No Seasonality)
 	C.  Additive Seasonal Exponential Smoothing (No Trend, Seasonality)
@@ -198,7 +198,7 @@ Determining the presence or absence of trend in your time series data
 
 + __References:__ Class Notes, SAS programs, and Chapter 7, FPP  
 	
-14. [Searching for an Extra Variable to Help Us Forecast: VARs](L14.html) <!-- # (Proc VARMAX) -->
+14. [Searching for an Extra Variable to Help Us Forecast: VARs](L14.Rmd) <!-- # (Proc VARMAX) -->
 	A.  Be careful: The Spurious Regression Problem
 	B.  The Transfer Function Model
 	C.  The Equal-Lag Length Vector Autoregressive Model
@@ -209,7 +209,7 @@ Determining the presence or absence of trend in your time series data
 	
 + __References:__ Class Notes, SAS programs, and Chapter 9, FPP  
 	
-15. [Combining Forecasts](L15.html)
+15. [Combining Forecasts](L15.Rmd)
 	A.  Combination Forecasting
 		i. Some Basic Theorems on Diversification of Forecasts
 		ii. Nelson Combination Method
