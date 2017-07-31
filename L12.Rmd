@@ -1,0 +1,22 @@
+---
+title: "12. Box Jenkins Models for Seasonal, Stochastically-Trending Time Series"  
+output: 
+  html_document:
+    toc: true
+    fig_caption: true
+bibliography: bibliography.bib      
+---
+
+# A. Year-Over-Year Differencing
+
+# B. Year-Over-Year Differencing Combined with First Differencing
+
+# C. The Multiplicative Class of Box-Jenkins Models
+
+# D. The ACFs and PACFs of Multiplicative Seasonal Models
+
+# E. Examples: Airline Passenger Data and Electricity Production Data
+
+# F. Testing for Seasonal Differencing
+
+# References

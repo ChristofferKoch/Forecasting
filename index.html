@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>ECO 5375 Forecasting</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">ECO 5375 Forecasting</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="L01.html">1</a>
+</li>
+<li>
+  <a href="L02.html">2</a>
+</li>
+<li>
+  <a href="L03.html">3</a>
+</li>
+<li>
+  <a href="L04.html">4</a>
+</li>
+<li>
+  <a href="L05.html">5</a>
+</li>
+<li>
+  <a href="L06.html">6</a>
+</li>
+<li>
+  <a href="L07.html">7</a>
+</li>
+<li>
+  <a href="L08.html">8</a>
+</li>
+<li>
+  <a href="L09.html">9</a>
+</li>
+<li>
+  <a href="L10.html">10</a>
+</li>
+<li>
+  <a href="L11.html">11</a>
+</li>
+<li>
+  <a href="L12.html">12</a>
+</li>
+<li>
+  <a href="L13.html">13</a>
+</li>
+<li>
+  <a href="L14.html">14</a>
+</li>
+<li>
+  <a href="L15.html">15</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="http://www.christofferkoch.com">
+    <span class="fa fa-question fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">ECO 5375 Forecasting</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#general-information">General Information</a></li>
+<li><a href="#textbook-for-the-course">Textbook for the Course</a></li>
+<li><a href="#important-dates-to-remember">Important Dates to Remember</a></li>
+<li><a href="#grading">Grading</a></li>
+<li><a href="#topics">Topics</a></li>
+<li><a href="#lecture-schedule">Lecture Schedule</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+
+<div id="general-information" class="section level1">
+<h1>General Information</h1>
+<p>There will be two mid-term exams, a double-point homework assignment due in lieu of a final exam, homework assignments, and class attendance. The weights of each of these items are as follows: mid-term exams (30% each), homework assignments (30%), and class attendance (10%). I will be assigning a maximum of 10 points for class attendance - 10 points for no unexcused absences, 8 points for 1 or 2 absences, and 6 points for more than 2 absences. After 4 or more absences in class attendance, I reserve the right to administratively drop the student from the class. My policy is to drop the lowest homework score you have before forming a homework average to be used in calculating your overall average in the class. The empirical project due in lieu of a final exam will be a double-point (20 points) assignment that will be included in the homework part of your grading scale. (The usual homework problems are valued at 10 points each.) Finally, you must obtain a doctor’s letter if you are to be excused from any exams or homework assignments due to illness.</p>
+</div>
+<div id="textbook-for-the-course" class="section level1">
+<h1>Textbook for the Course</h1>
+<p>I am going to be relying more on classroom presentations and pdf handouts to teach this course than on any one textbook. I have not found any textbook that closely enough matches the topics that I think are important for this course. However, there is a nice open source (free) book that can serve as a useful supplementary textbook for this course. It is Forecasting Principles and Practice (FPP) by Rob. J. Hyndman and George Athanasopoulos. You can find it at the website <a href="https://www.otexts.org/fpp" class="uri">https://www.otexts.org/fpp</a>. In particular, if you are interested in learning some R programming language you should run some of the R programs that are detailed in the FPP book.</p>
+<p><strong>Some other sources:</strong></p>
+<ul>
+<li><span class="citation">Cryer and Chan (2008)</span></li>
+<li><span class="citation">Diebold (2007)</span></li>
+<li><span class="citation">Hyndman and Athanasopoulos (2017)</span></li>
+</ul>
+</div>
+<div id="important-dates-to-remember" class="section level1">
+<h1>Important Dates to Remember</h1>
+<ul>
+<li>First Day of Class: <del>Tuesday, August 23</del>. <span style="color:red">Monday, August 28
+</style></li>
+<li>Labor Day Holiday: Monday, September 4</li>
+<li>Fall Break: Monday - Tuesday, October 10-11</li>
+<li>Last Day to Drop a Class: Friday, November 3</li>
+<li>No Classes on Wednesday, November 23</li>
+<li>Thanksgiving Break: Thursday - Friday, November 23-24</li>
+<li>Last Day of Class: Tuesday, December 1</li>
+<li>When double-point homework assignment is due (in lieu of final exam): Monday, December 4 by 5:00 pm. Assignment can be turned in at my office or to my mailbox in the 301 Office Suite in Umphrey Lee Building.</li>
+</ul>
+</div>
+<div id="grading" class="section level1">
+<h1>Grading</h1>
+<p><strong>My grading scale</strong> in this course is as follows:</p>
+<ul>
+<li>A: 92-100;</li>
+<li>A-: 90-91;</li>
+<li>B+: 88-89;</li>
+<li>B: 82-87;</li>
+<li>B-: 80-81;</li>
+<li>C+: 78-79;</li>
+<li>C: 72-77;</li>
+<li>C-: 70-71;</li>
+<li>D+: 68-69;</li>
+<li>D: 62-67;</li>
+<li>D-: 60-61;</li>
+<li>F: 0-59.</li>
+</ul>
+<p>With respect to homework exercises, students can confer with each other with respect to programming advice and discussion of basic ideas but in the final analysis each student is expected to write up his/her own homework answers and not make copies of others’ homework. Copying someone else’s homework to hand in as one’s own work is a violation of the SMU Honor Code and will be dealt with according to the rules of the SMU Honor Code. It is important to know that the homework assignments are very important in that the basic ideas covered by them invariably show up on the mid-term and final exams. If you know you are going to be missing a class on the day a homework exercise is due, hand in your homework <strong>in advance</strong> to receive full credit for your work.</p>
+<p>Any homework that is handed in late will be given a one letter grade reduction for each day of tardiness. It is my policy to drop your lowest exercise score before calculating your exercise average.</p>
+<p>Students will be excused from taking the mid-term exam or the final exam only with a note from a physician, or in the case of a death in the family, with a note from a parent or guardian. Even with an excused absence, either of these exams must eventually be taken before a course grade will be assigned to the student.</p>
+<p>If you must miss a class due to legitimate circumstances beyond your control, be sure and contact me <strong>beforehand</strong> so that I will know of your circumstances. If excused, I will correspondingly excuse you from any QQ that is given that day. I want to emphasize that diligent attendance in this course is essential because a lot of the course material presented in class will be from my personal class notes and can’t be found in any textbook per se. <strong>Note:</strong> After 4 unexcused class absences, I reserve the right to administratively drop students from the class.</p>
+</div>
+<div id="topics" class="section level1">
+<h1>Topics</h1>
+<ol style="list-style-type: decimal">
+<li><a href="L01.html">Introduction to Course</a>
+<ol style="list-style-type: upper-alpha">
+<li>Focus of this Course: Time Series Forecasting</li>
+<li>Field of Forecasting is meeting the Market Test</li>
+<li>Definitions of Time Series, Point Forecasts, and Prediction Interval Forecasts</li>
+<li>Evaluation of Competing Forecasting Accuracy
+<ol style="list-style-type: lower-roman">
+<li>Forecasting Accuracy Measures</li>
+<li>Naïve Forecasting Methods as Benchmarks</li>
+</ol></li>
+<li>Example: The Plano City Manager Planning Problem</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>Reference:</strong> Class Notes, SAS programs, and Chapters 1 and 2, FPP.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><a href="L02.html">A Brief Introduction to SAS</a>
+<ol style="list-style-type: upper-alpha">
+<li>APPS.SMU and Accessing Computer Programs on SMU’s Virtual Server - Downloading Citrix Receiver</li>
+<li>Introduction to SAS (SAS = Statistical Analysis System)
+<ol style="list-style-type: lower-roman">
+<li>Program Editor in SAS 9.4</li>
+<li>Data Steps and Procedure Steps</li>
+<li>Log and Listing Files</li>
+</ol></li>
+<li>Inputting Data
+<ol style="list-style-type: lower-roman">
+<li>Direct Input</li>
+<li>Infile Statement</li>
+</ol></li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class Notes</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li><a href="L03.html">Salient Characteristics of Time Series Data</a>
+<ol style="list-style-type: upper-alpha">
+<li>Trend, Seasonal, Cycle, Irregular Components</li>
+<li>Y = T + S + C + I (Additive Decomposition)</li>
+<li>log(Y) = T + S + C + I (Multiplicative Decomposition)</li>
+<li>A Stylized Decomposition of a Time Series</li>
+<li>Importance of knowing which components are in your time series</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class notes, SAS programs, and Chapter 6, FPP</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li><a href="L04.html">Brief Interlude on the Detection of Seasonality, Trend, and Cycle</a>
+<ol style="list-style-type: upper-alpha">
+<li>Trend Tests: Hirsch, et. al. Non-parametric test, HAC Non-Parametric Tests of Mean of Differences and Time Trend tests</li>
+<li>Seasonality Tests: Buys-Ballot Plots, Friedman’s Non-parametric test, and F-Test in DTDS model</li>
+<li>Cycle: The Autocorrelation Function and Box-Pierce-Ljung Portmonteau Test</li>
+<li>Example: Plano Sales Tax Revenue Data</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class notes and SAS programs</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li><a href="L05.html">A Beginning Time Series Model: The Stable Seasonal Pattern Model</a>
+<ol style="list-style-type: upper-alpha">
+<li>Determination of Seasonal Proportions</li>
+<li>Test of Equal Proportions</li>
+<li>Estimation of Trend</li>
+<li>Example: Plano Sales Tax Revenue Data</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class Notes</li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li><a href="L06.html">A First Generation Forecasting Model - The Deterministic Trend/Deterministic Seasonal (DTDS) Model</a>
+<ol style="list-style-type: upper-alpha">
+<li>The Simple Trend Model - A Deterministic Trend</li>
+<li>Trend Model with Seasonal Dummies</li>
+<li>DTDS plus Autocorrelated Errors</li>
+<li>Example: Plano Sales Tax Revenue Data</li>
+<li>Tests for Trend and Seasonality - F-tests</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class Notes, SAS programs, and Chapter 5, FPP</li>
+</ul>
+<ol start="7" style="list-style-type: decimal">
+<li><a href="L07.html">A Sophisticated Time Series Decomposition Model: The Unobserved Components Model</a> <!-- #  (Proc UCM in SAS) -->
+<ol style="list-style-type: upper-alpha">
+<li>Three Unobservable Components
+<ol style="list-style-type: lower-roman">
+<li>Trend<br />
+</li>
+<li>Seasonal<br />
+</li>
+<li>Cycle</li>
+</ol></li>
+<li>Test of the Significance of the Components</li>
+<li>Example: Airline Passenger Data</li>
+<li>Forecasting the Airline Passenger Data</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class Notes and SAS programs</li>
+</ul>
+<ol start="8" style="list-style-type: decimal">
+<li><a href="L08.html">Some Important Concepts Leading up to Box-Jenkins Modeling</a>
+<ol style="list-style-type: upper-alpha">
+<li>Mean, Variance, and Autocorrelation in Time Series</li>
+<li>Definition of Covariance Stationarity</li>
+<li>Example of a Stationary Time Series: the AR(1) model
+<ol style="list-style-type: lower-roman">
+<li>AR(1) Time Series Model<br />
+</li>
+<li>Mean, Variance, Autocovariance, and Autocorrelation<br />
+</li>
+<li>The Special Case of <span class="math inline">\(\phi\)</span> = 1. The Random Walk model<br />
+</li>
+<li>The Random Walk Model in not Stationary<br />
+</li>
+<li>Differing Prediction Profiles for the two cases: Do Stock Prices follow a Random Walk?</li>
+</ol></li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class Notes, SAS program RW_IBM_data.sas, and Chapter 8, FPP</li>
+</ul>
+<ol start="9" style="list-style-type: decimal">
+<li><a href="L09.html">Box Jenkins Models for Stationary, Non-Seasonal Time Series</a>
+<ol style="list-style-type: upper-alpha">
+<li>Some Simple Box-Jenkins Models and Their Properties
+<ol style="list-style-type: lower-roman">
+<li>ARMA(0,0)</li>
+<li>MA(1)</li>
+<li>AR(1)</li>
+<li>ARMA(1,1)</li>
+<li>General Notation</li>
+<li>Concepts of Stationarity and Invertibility</li>
+</ol></li>
+<li>Identification Tools
+<ol style="list-style-type: lower-roman">
+<li>Autocorrelation Function (ACF)<br />
+</li>
+<li>Partial Autocorrelation Function (PACF)<br />
+</li>
+</ol></li>
+<li>Pattern Table<br />
+</li>
+<li>Sample Counterparts<br />
+</li>
+<li>Information Criteria<br />
+</li>
+<li>P/Q Box<br />
+</li>
+<li>Overfitting Exercises<br />
+</li>
+<li>Example: Lead Production Data</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class Notes, SAS programs, and Chapter 8, FPP</li>
+</ul>
+<ol start="10" style="list-style-type: decimal">
+<li><a href="L10.html">Box-Jenkins Models - Forecasting for Stationary, Non-Seasonal Time Series</a>
+<ol style="list-style-type: upper-alpha">
+<li>Minimum MSE Forecasting</li>
+<li>Various Forecast Profiles</li>
+<li>Example: The Forecast Profile and Confidence Intervals for the Lead Production Data</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class Notes, SAS programs, and Chapter 8, FPP</li>
+</ul>
+<ol start="11" style="list-style-type: decimal">
+<li><a href="L11.html">Box-Jenkins Models for Non-Seasonal, Stochastically-Trending Time Series</a>
+<ol style="list-style-type: upper-alpha">
+<li>Taking the First Difference to Control for Stochastic Trends</li>
+<li>Taking, On Occasion, Second Differences of the Data</li>
+<li>Augmented Dickey-Fuller Tests for Unit Roots: To Difference or Not To Difference?</li>
+<li>Example: The Dow Jones Index</li>
+<li>Forecasting Levels Based on Forecasts of Differences</li>
+<li>The Log Transformation and how to use it</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class Notes, RW_Data_and_Differencing.sas, other SAS programs, and Chapter 8, FPP</li>
+</ul>
+<ol start="12" style="list-style-type: decimal">
+<li><a href="L12.html">Box-Jenkins Models for Seasonal, Stochastically-Trending Time Series</a>
+<ol style="list-style-type: upper-alpha">
+<li>Year-over-Year Differencing</li>
+<li>Year-over-Year Differencing Combined with First Differencing</li>
+<li>The Multiplicative Class of Box-Jenkins Models</li>
+<li>The ACFs and PACFs of Multiplicative Seasonal Models</li>
+<li>Examples: Airline Passenger Data and Electricity Production Data</li>
+<li>Testing for Seasonal Differencing</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class Notes, SAS Programs, and Chapter 8, FPP</li>
+</ul>
+<ol start="13" style="list-style-type: decimal">
+<li><a href="L13.html">Exponential Smoothing - An Old Favorite</a> <!-- # (Proc ESM) -->
+<ol style="list-style-type: upper-alpha">
+<li>Simple Exponential Smoothing (No Trend, No Seasonality)</li>
+<li>Double (Brown) Exponential Smoothing (Trend, No Seasonality)</li>
+<li>Additive Seasonal Exponential Smoothing (No Trend, Seasonality)</li>
+<li>Winters Additive Method (Trend, Seasonality)</li>
+<li>Plano Sales Tax Revenue Data - An experiment showing the importance of Determining the presence or absence of trend in your time series data</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class Notes, SAS programs, and Chapter 7, FPP</li>
+</ul>
+<ol start="14" style="list-style-type: decimal">
+<li><a href="L14.html">Searching for an Extra Variable to Help Us Forecast: VARs</a> <!-- # (Proc VARMAX) -->
+<ol style="list-style-type: upper-alpha">
+<li>Be careful: The Spurious Regression Problem</li>
+<li>The Transfer Function Model</li>
+<li>The Equal-Lag Length Vector Autoregressive Model</li>
+<li>System-Wide Goodness of Fit Measures to Help Choose the Lag-Length</li>
+<li>Using Out-of-Sample Forecasting Experiments to Detect Useful “Extra” Variables for use in Forecasting a Variable of Interest</li>
+<li>Diebold-Mariano Test for Significant Differences in Forecasting Accuracies</li>
+<li>Example: The “Series M” Data Set</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class Notes, SAS programs, and Chapter 9, FPP</li>
+</ul>
+<ol start="15" style="list-style-type: decimal">
+<li><a href="L15.html">Combining Forecasts</a>
+<ol style="list-style-type: upper-alpha">
+<li>Combination Forecasting
+<ol style="list-style-type: lower-roman">
+<li>Some Basic Theorems on Diversification of Forecasts</li>
+<li>Nelson Combination Method</li>
+<li>Granger-Ramanathan Combination Method</li>
+<li>Combinations with Time-Varying Weights</li>
+</ol></li>
+<li>Application to Economic Time Series</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>References:</strong> Class Notes and SAS programs</li>
+</ul>
+</div>
+<div id="lecture-schedule" class="section level1">
+<h1>Lecture Schedule</h1>
+<ul>
+<li>August 21: <del>Review of Course Outline and Focus of Course</del></li>
+<li>August 23: <del>Some Basic Concepts, Apps.smu, and Introduction to SAS</del></li>
+<li>August 28: Some Practice with SAS programming</li>
+<li>August 30: Salient Characteristics of Time Series Data</li>
+<li>September 4: Detection of Seasonality, Trend, and Cycle in Time Series Data</li>
+<li>September 6: Detection of Seasonality, Trend, and Cycle in Time Series Data continued.</li>
+<li>September 11: The Stable Seasonal Pattern Model</li>
+<li>September 13: The Stable Seasonal Pattern Model continued.</li>
+<li>September 18: Deterministic Trend/Deterministic Season Model</li>
+<li>September 20: Deterministic Trend/Deterministic Season Model continued.</li>
+<li>September 25: Unobserved Components Model</li>
+<li>September 27: Unobserved Components Model continued.</li>
+<li>October 2: Review for Mid-term I exam</li>
+<li>October 4: Mid-term I exam</li>
+<li>October 9: Fall Break</li>
+<li>October 11: Important Concepts Leading up to Box-Jenkins Modeling</li>
+<li>October 16: Important Concepts Leading up to Box-Jenkins Modeling continued.</li>
+<li>October 18: Box-Jenkins Modeling</li>
+<li>October 23: Box-Jenkins Modeling continued.</li>
+<li>October 25: Box-Jenkins Modeling continued.</li>
+<li>October 30: Box-Jenkins Modeling continued.</li>
+<li>November 1: Box-Jenkins Modeling continued.</li>
+<li>November 6: Exponential Smoothing</li>
+<li>November 8: Searching for an Extra Variable to Help us Forecast</li>
+<li>November 13: Searching for an Extra Variable to Help us Forecast continued.</li>
+<li>November 15: Searching for an Extra Variable to Help us Forecast continued.</li>
+<li>November 20: Combination Forecasting</li>
+<li>November 27: Review for Mid-term II exam</li>
+<li>November 29: Mid-term II exam</li>
+<li>Double-Point Homework in lieu of final exam due at 5:00 pm on Monday, December 4 in my office or mailbox.</li>
+</ul>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-cryer/chan:2008">
+<p>Cryer, Jonathan D., and Kung-Sik Chan. 2008. <em>Time Series Analysis with Applications in R</em>. Springer.</p>
+</div>
+<div id="ref-diebold:2007">
+<p>Diebold, Francis X. 2007. <em>Elements of Forecasting (Fourth Edition)</em>. Thomson Higher Education.</p>
+</div>
+<div id="ref-hyndman/athanasopoulos:2017">
+<p>Hyndman, Rob. J., and George Athanasopoulos. 2017. <em>Forecasting Principles and Practice</em>.</p>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

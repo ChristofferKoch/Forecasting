@@ -1,0 +1,16 @@
+---
+title: "10. Box Jenkins Models - Forecasting Stationary, Non-Seasonal Time Series"  
+output: 
+  html_document:
+    toc: true
+    fig_caption: true
+bibliography: bibliography.bib      
+---
+
+# A. Minimum MSE Forecasting
+
+# B. Various Forecast Profiles
+
+# C. Example: The Forecasting Profile and Confidence Intervals for the Lead Production Data
+
+#  References

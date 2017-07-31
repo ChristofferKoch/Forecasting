@@ -1,0 +1,20 @@
+---
+title: "13. Exponential Smoothing - An Old Favorite"  
+output: 
+  html_document:
+    toc: true
+    fig_caption: true
+bibliography: bibliography.bib      
+---
+
+# A. Simple Exponential Smoothing (No Trend, No Seasonality)
+
+# B. Double (Brown) Exponential Smoothing (Trend, No Seasonality)
+
+# C. Additive Seasonal Exponential Smoothing (No Trend, Seasonality)
+
+# D. Winters Additive Method (Trend, Seasonality)
+
+# E. Plano Sales Tax Revenue Data - An experiment showing the importance of Determining the presence of absence of trend in your time series data
+
+# References

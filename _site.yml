@@ -1,0 +1,40 @@
+name: "Forecasting"
+output_dir: "."
+navbar:
+  title: "ECO 5375 Forecasting"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "1"
+      href: L01.html
+    - text: "2"
+      href: L02.html
+    - text: "3"
+      href: L03.html
+    - text: "4"
+      href: L04.html
+    - text: "5"
+      href: L05.html
+    - text: "6"
+      href: L06.html
+    - text: "7"
+      href: L07.html
+    - text: "8"
+      href: L08.html
+    - text: "9"
+      href: L09.html
+    - text: "10"
+      href: L10.html
+    - text: "11"
+      href: L11.html
+    - text: "12"
+      href: L12.html
+    - text: "13"
+      href: L13.html
+    - text: "14"
+      href: L14.html
+    - text: "15"
+      href: L15.html
+  right:
+    - icon: fa-question fa-lg
+      href: http://www.christofferkoch.com  

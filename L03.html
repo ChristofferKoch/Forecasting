@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">ECO 5375 Forecasting</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="L01.html">1</a>
+</li>
+<li>
+  <a href="L02.html">2</a>
+</li>
+<li>
+  <a href="L03.html">3</a>
+</li>
+<li>
+  <a href="L04.html">4</a>
+</li>
+<li>
+  <a href="L05.html">5</a>
+</li>
+<li>
+  <a href="L06.html">6</a>
+</li>
+<li>
+  <a href="L07.html">7</a>
+</li>
+<li>
+  <a href="L08.html">8</a>
+</li>
+<li>
+  <a href="L09.html">9</a>
+</li>
+<li>
+  <a href="L10.html">10</a>
+</li>
+<li>
+  <a href="L11.html">11</a>
+</li>
+<li>
+  <a href="L12.html">12</a>
+</li>
+<li>
+  <a href="L13.html">13</a>
+</li>
+<li>
+  <a href="L14.html">14</a>
+</li>
+<li>
+  <a href="L15.html">15</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="http://www.christofferkoch.com">
+    <span class="fa fa-question fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore"><ol start="3" style="list-style-type: decimal">
+<li>Salient Characteristics of Time Series Data</li>
+</ol></h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#a.-trend-seasonal-cycle-irregular-components">A. Trend, Seasonal, Cycle, Irregular Components</a></li>
+<li><a href="#b.-y-t-s-c-i-additive-decomposition">B. Y = T + S + C + I (Additive Decomposition)</a></li>
+<li><a href="#c.-logy-t-s-c-i-multiplicative-decomposition">C. log(Y) = T + S + C + I (Multiplicative Decomposition)</a></li>
+<li><a href="#d.-a-stylized-decomposition-of-a-time-series">D. A Stylized Decomposition of a Time Series</a></li>
+<li><a href="#e.-importance-of-knowning-which-components-are-in-your-time-series">E. Importance of knowning which components are in your time series</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+
+<div id="a.-trend-seasonal-cycle-irregular-components" class="section level1">
+<h1>A. Trend, Seasonal, Cycle, Irregular Components</h1>
+<p>Let us first look at an example of a time-series.</p>
+<pre class="r"><code>ts &lt;- AirPassengers
+plot(AirPassengers)</code></pre>
+<pre class="r"><code>plot(AirPassengers,las=1,col=&quot;blue&quot;,main=&quot;Air Passenger Data&quot;)</code></pre>
+<p><img src="L03_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Now let us consider seasonal plots</p>
+<pre class="r"><code>seasonplot(AirPassengers,las=1,main=&quot;Seasonal Plot&quot;)</code></pre>
+<p><img src="L03_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>monthplot(AirPassengers,las=1,main=&quot;Month Plot&quot;)</code></pre>
+<p><img src="L03_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Another example is the CO2 data see <code>?monthplot</code></p>
+<pre class="r"><code>fit &lt;- stl(log(co2), s.window = 20, t.window = 20)
+plot(fit)</code></pre>
+<p><img src="L03_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>op &lt;- par(mfrow = c(2,2))
+monthplot(co2, ylab = &quot;data&quot;, cex.axis = 0.8)
+monthplot(fit, choice = &quot;seasonal&quot;, cex.axis = 0.8)
+monthplot(fit, choice = &quot;trend&quot;, cex.axis = 0.8)
+monthplot(fit, choice = &quot;remainder&quot;, type = &quot;h&quot;, cex.axis = 0.8)</code></pre>
+<p><img src="L03_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+<pre class="r"><code>par(op)</code></pre>
+<p><span class="math display">\[ \{ y(s,t), s \in \mathbb{S}, t \in \mathbb{T}\}\]</span> What is a stationary stochastic process?</p>
+<p><span class="math display">\[\begin{align*} 
+y&#39;_t &amp;= \beta_1 x&#39;_{1,t} + \dots +
+\beta_k x&#39;_{k,t} + n&#39;_t,\\ 
+&amp; (1-\phi_1B)n&#39;_t = (1+\theta_1B)e_t, \end{align*} \]</span></p>
+<p>where <span class="math inline">\(y&#39;_t=y_t-y_{t-1}\)</span>, <span class="math inline">\(x&#39;_{t,i}=x_{t,i}-x_{t-1,i}\)</span> and <span class="math inline">\(n&#39;_t=n_t-n_{t-1}\)</span>, which is a regression model in differences with ARMA errors.</p>
+</div>
+<div id="b.-y-t-s-c-i-additive-decomposition" class="section level1">
+<h1>B. Y = T + S + C + I (Additive Decomposition)</h1>
+<p><span class="math display">\[ Y = T + S + C + I \]</span></p>
+</div>
+<div id="c.-logy-t-s-c-i-multiplicative-decomposition" class="section level1">
+<h1>C. log(Y) = T + S + C + I (Multiplicative Decomposition)</h1>
+</div>
+<div id="d.-a-stylized-decomposition-of-a-time-series" class="section level1">
+<h1>D. A Stylized Decomposition of a Time Series</h1>
+</div>
+<div id="e.-importance-of-knowning-which-components-are-in-your-time-series" class="section level1">
+<h1>E. Importance of knowning which components are in your time series</h1>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
