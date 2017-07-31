@@ -1,0 +1,28 @@
+---
+title: "14. Vector Autoregressions"  
+output: 
+  html_document:
+    toc: true
+    fig_caption: true
+bibliography: bibliography.bib      
+---
+
+*  @diebold:2007 Chapter 12
+
+# A. Be careful: The Spurious Regression Problem
+
+Searching for an Extra Variable to Help Us Forecast: VARs 
+
+# B. The Transfer Function Model
+
+# C. The Equal-Lag Length Vector Autoregressiev Model
+
+# D. System-Wide Goodness of Fit Measures to Help Choose the Lag-Length
+
+# E. Using Out-of-Sample Forecasting Experiments
+
+# F. Diebold-Mariano Test for Significant Differences in Forecasting Accuracies
+
+# G. Example: The "Series M" Data Set
+
+# References

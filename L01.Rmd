@@ -1,0 +1,47 @@
+---
+title: "1. Introduction to Course" 
+output: 
+  html_document:
+    toc: true
+    fig_caption: true
+bibliography: bibliography.bib    
+---
+  
+# A. Focus of this Course: Time Series Forecasting
+
+The focus of this course is time series. 
+
+```{r, echo=TRUE}
+series1 <- runif(1000)
+plot(series1,las=1,type="l",col="blue",main="Random Drawns",ylab="",xlab="index")
+```
+
+## Examples of Time Series
+
+
+$$ Y_1 = e_1$$
+
+```{r}
+w =  rnorm(500,0,1)
+v =  filter(w,sides=2,rep(1/3,3))
+par(mfrow = c(2,1))
+plot.ts(w, las = 1, col = "blue", main = "White Noise")
+plot.ts(v, las = 1, col = "blue", main = "Moving Average")
+
+```
+
+
+# B. Field of Forecasting is meeting the Market Test
+
+# C. Nelson Combination Method
+
+# D. Granger-Ramanatahan Combination Method
+
+## i. Forecasting Accuracy Measures
+
+## ii. Naive Forecasting Methods as Benchmarks
+  
+
+# E. Example: The Plano City Manager Planning Problem
+
+# References

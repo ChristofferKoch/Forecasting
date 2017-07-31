@@ -1,0 +1,74 @@
+---
+title: "3. Salient Characteristics of Time Series Data"  
+output: 
+  html_document:
+    toc: true
+    fig_caption: true
+bibliography: bibliography.bib      
+---
+  
+# A. Trend, Seasonal, Cycle, Irregular Components
+
+Let us first look at an example of a time-series. 
+
+```{r, eval=FALSE}
+ts <- AirPassengers
+plot(AirPassengers)
+
+```
+
+```{r}
+plot(AirPassengers,las=1,col="blue",main="Air Passenger Data")
+
+```
+
+Now let us consider seasonal plots
+
+```{r}
+seasonplot(AirPassengers,las=1,main="Seasonal Plot")
+```
+
+
+```{r}
+monthplot(AirPassengers,las=1,main="Month Plot")
+```
+
+
+Another example is the CO2 data see `?monthplot`
+
+```{r}
+fit <- stl(log(co2), s.window = 20, t.window = 20)
+plot(fit)
+op <- par(mfrow = c(2,2))
+monthplot(co2, ylab = "data", cex.axis = 0.8)
+monthplot(fit, choice = "seasonal", cex.axis = 0.8)
+monthplot(fit, choice = "trend", cex.axis = 0.8)
+monthplot(fit, choice = "remainder", type = "h", cex.axis = 0.8)
+par(op)
+```
+
+
+$$ \{ y(s,t), s \in \mathbb{S}, t \in \mathbb{T}\}$$ 
+What is a stationary stochastic process?
+
+
+$$\begin{align*} 
+y'_t &= \beta_1 x'_{1,t} + \dots +
+\beta_k x'_{k,t} + n'_t,\\ 
+& (1-\phi_1B)n'_t = (1+\theta_1B)e_t, \end{align*} $$
+
+where $y'_t=y_t-y_{t-1}$, $x'_{t,i}=x_{t,i}-x_{t-1,i}$ and $n'_t=n_t-n_{t-1}$, which is
+a regression model in differences with ARMA errors.
+
+
+# B. Y = T + S + C + I (Additive Decomposition)
+
+$$ Y = T + S + C + I $$
+
+# C. log(Y) = T + S + C + I (Multiplicative Decomposition)
+
+# D. A Stylized Decomposition of a Time Series
+
+# E. Importance of knowning which components are in your time series
+
+# References

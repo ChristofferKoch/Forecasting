@@ -1,0 +1,22 @@
+---
+title: "11. Box Jenkins Models for Non-Seasonal, Stochastically-Trending Time Series"  
+output: 
+  html_document:
+    toc: true
+    fig_caption: true
+bibliography: bibliography.bib      
+---
+
+# A. Taking the First Difference to Control for Stochastic Trends
+
+# B. Taking On Occasoin, Second Differences of the Data
+
+# C. Augmented Dickey-Fuller Tests for Unit Roots: To Difference or Not To Difference?
+
+# D. Example: The Dow Jones Index
+
+# E. Forecasting Levels Based on Forecasts of Differences
+
+# F. The Log Transformation and How to Use it
+
+# References
