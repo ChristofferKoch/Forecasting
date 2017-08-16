@@ -1,5 +1,5 @@
-# Forecasting
-Forecasting  Course at SMU
+# ECO 5375 - Forecasting (Fall 2017)
+Forecasting Course at Southern Methodist University
 
 # General Information 
 
